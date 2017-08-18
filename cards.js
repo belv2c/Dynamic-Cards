@@ -1,13 +1,27 @@
+console.log("Dynamic Cards");
+
+
 var textHolder = document.getElementById('textarea');
 var buttonSumbit = document.getElementById('btn');
+var cardHolder = document.getElementById('card');
+var newDomString = buildDomString();
 
-function domString(cards) {
-	var cardString = '';
-		newCard+=	'<textarea class="title">'
-		newCard+=
-		newCard+=
-		newCard+= 
-		cardString += newCard;
+function buildDomString(cards) {
+	var domString = "";
+		
+		domString+=	`<textarea class="textarea"${textHolder.value}>`;
+		domString+= `<btn class="buttonSubmit"${btn.value}>`;
+		domString+= `<div class="cardHolder"${card.value}>`;
+		domString+= `</div>`;
+		return domString;
 	}
 
-	writeToDom(cardString);
+cardHolder.innerHTML += newDomString;
+
+/*function printToDom(cards){*/
+	/*textHolder.innerHTML = cards;*/
+/*}*/
+
+buttonSubmit.addEventListener('click', function(event){
+
+})
