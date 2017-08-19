@@ -1,4 +1,16 @@
-.btn {
+/*Text input area styling*/
+textarea {
+  height: 192px;
+  width: 300px;
+}
+
+/*Page Styling*/
+body {
+  background-color: aquamarine;
+}
+
+/*Create button styling*/
+#btn {
   -webkit-border-radius: 40;
   -moz-border-radius: 40;
   border-radius: 40px;
@@ -10,12 +22,7 @@
   text-decoration: none;
 }
 
-.btn:hover {
+#btn:hover {
   background: #cbe603;
   text-decoration: none;
-}
-
-textarea {
-  height: 192px;
-  width: 300px;
 }

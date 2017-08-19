@@ -1,27 +1,44 @@
 console.log("Dynamic Cards");
 
 
+//Create variables to hold HTML elements
 var textHolder = document.getElementById('textarea');
-var buttonSumbit = document.getElementById('btn');
+var buttonSubmit = document.getElementById('btn');
 var cardHolder = document.getElementById('card');
-var newDomString = buildDomString();
+var buttonDelete = document.getElementById('btnDelete');
 
-function buildDomString(cards) {
+
+//Build Dom String
+function buildDomString() {
 	var domString = "";
 		
-		domString+=	`<textarea class="textarea"${textHolder.value}>`;
-		domString+= `<btn class="buttonSubmit"${btn.value}>`;
-		domString+= `<div class="cardHolder"${card.value}>`;
+		domString+=	`<textarea id="textarea">${textHolder.value}</textarea>`;
+	/*	domString+= 	`<btn class="buttonSubmit">Create</button>`;*/
+		domString+=		`<button id="buttonDelete">Delete</button>`;
+		domString+= 	`<div id="cardHolder">`;
 		domString+= `</div>`;
-		return domString;
+		//Calling the function
+		writeToDom(domString);
+		//Prints out the domString to the js console
+		console.log(domString);
 	}
 
-cardHolder.innerHTML += newDomString;
+//Adding click event to Create button
+buttonSubmit.addEventListener('click', buildDomString);
 
-/*function printToDom(cards){*/
-	/*textHolder.innerHTML = cards;*/
-/*}*/
+//Function calling writeToDom and inserting cardHolder into HTML
+function writeToDom (domString){
+	cardHolder.innerHTML+=domString;
+}
 
-buttonSubmit.addEventListener('click', function(event){
+//Adding click event to delete button 
+cardHolder.addEventListener('click', buttonDelete);
 
-})
+//Function that deletes the cardHolder from the DOM when the delete button is clicked
+function buttonDelete (event){
+	console.log(event);
+	if(event.target.className === 'btnDelete'){
+		event.target.parentNode.remove();
+	}
+}
+
