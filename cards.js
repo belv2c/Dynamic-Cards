@@ -5,7 +5,6 @@ console.log("Dynamic Cards");
 var textHolder = document.getElementById('textarea');
 var buttonSubmit = document.getElementById('btn');
 var cardHolder = document.getElementById('card');
-var buttonDelete = document.getElementById('btnDelete');
 
 
 //Build Dom String
@@ -14,7 +13,7 @@ function buildDomString() {
 		
 		domString+=	`<textarea id="textarea">${textHolder.value}</textarea>`;
 	/*	domString+= 	`<btn class="buttonSubmit">Create</button>`;*/
-		domString+=		`<button id="buttonDelete">Delete</button>`;
+		domString+=		`<button class="buttonDelete">Delete</button>`;
 		domString+= 	`<div id="cardHolder">`;
 		domString+= `</div>`;
 		//Calling the function
@@ -32,12 +31,12 @@ function writeToDom (domString){
 }
 
 //Adding click event to delete button 
-cardHolder.addEventListener('click', buttonDelete);
+cardHolder.addEventListener('click', deleteCard);
 
 //Function that deletes the cardHolder from the DOM when the delete button is clicked
-function buttonDelete (event){
-	console.log(event);
-	if(event.target.className === 'btnDelete'){
+function deleteCard (event){
+	console.log("event");
+	if(event.target.className === 'buttonDelete'){
 		event.target.parentNode.remove();
 	}
 }
